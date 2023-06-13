@@ -6,17 +6,14 @@
 let ladder = {
   step: 0,
   up() {
-    ladder.step++;
-    return this;
+    this.step++;
   },
   down() {
-    ladder.step--;
-    return this;
+    this.step--;
   },
-  showStep() {
+  showStep: function () {
     // показывает текущую ступеньку
-    alert(ladder.step);
-    return this;
+    alert(this.step);
   },
 };
 
@@ -34,3 +31,22 @@ ladder.showStep(); // 0
 ladder.up().up().down().showStep().down().showStep(); // показывает 1 затем 0
 
 // Такой подход широко используется в библиотеках JavaScript.
+
+//
+let lad = {
+  step: 0,
+  up() {
+    ladder.step++;
+    return this;
+  },
+  down() {
+    ladder.step--;
+    return this;
+  },
+  showStep() {
+    alert(ladder.step);
+    return this;
+  },
+};
+
+lad.up().up().down().showStep().down().showStep();
